@@ -23,7 +23,7 @@ assert(hasAVisited);
 You should set the `color` property to `grey`.
 
 ```js
-const hasColor = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style.color === 'grey');
+const hasColor = new __helpers.CSSHelp(document).getCSSRules().some(x => (x.style.color === 'grey' || x.style.color === 'gray'));
 assert(hasColor);
 ```
 
@@ -31,7 +31,7 @@ Your `a:visited` should have a `color` of `grey`.
 
 ```js
 const aVisitedColor = new __helpers.CSSHelp(document).getStyle('a:visited')?.getPropertyValue('color');
-assert(aVisitedColor === 'grey');
+assert(aVisitedColor === 'grey' || aVisitedColor === 'gray');
 ```
 
 # --seed--
@@ -85,7 +85,7 @@ assert(aVisitedColor === 'grey');
             <p class="dessert">Cheesecake</p><p class="price">3.00</p>
           </article>
           <article class="item">
-            <p class="dessert">Cinammon Roll</p><p class="price">2.50</p>
+            <p class="dessert">Cinnamon Roll</p><p class="price">2.50</p>
           </article>
         </section>
       </main>
